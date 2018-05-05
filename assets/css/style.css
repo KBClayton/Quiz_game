@@ -5,8 +5,12 @@ body{
     background-size:cover;
 }
 
+#holdsplash{
+    width: 60rem;
+    margin:auto;
+}
 
-#splash {
+#splash{
     position:absolute;
     top:0;
     left:0;
@@ -31,3 +35,10 @@ h2{
     border-color: teal;
     border-width: 5px;
 }
+
+.qdiv:hover{
+   font-size: 40pt;
+}
+.btn:hover{
+    font-size: 30pt;
+ }

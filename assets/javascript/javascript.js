@@ -101,7 +101,6 @@ $(document).ready(function() {
              awrong=0;
              aempty=0;
              currentcorrect=-2;
-
              $("#Quest").text("");
              $("#Ans1").text("");
              $("#Ans2").text("");
@@ -122,8 +121,7 @@ $(document).ready(function() {
         //populates the array that determines the order of questions
         qchoice: function(){
             var randq=0;
-            while ((quiz.length>chosenq.length))
-            {
+            while ((quiz.length>chosenq.length)){
                 randq= Math.floor(Math.random()*(quiz.length));
                 if (chosenq.indexOf(randq)==-1){
                     chosenq.push(randq);
@@ -134,13 +132,12 @@ $(document).ready(function() {
                 }
             }
         },
+
         //populates the array that determines the order possible answers are dislplayed in
         achoice: function(){
-
             chosena=[];
             var randa=0;
-            while ((quiz[chosenq[currentq]].length-1)>chosena.length)
-            {
+            while ((quiz[chosenq[currentq]].length-1)>chosena.length){
                 randa=Math.floor(Math.random()*((quiz[chosenq[currentq]].length-1))+1);
                 if (chosena.indexOf(randa)==-1){
                     chosena.push(randa);
@@ -158,7 +155,7 @@ $(document).ready(function() {
             $("#right").text("Right: "+ aright);
             $("#wrong").text("Wrong: "+ awrong);
             $("#unans").text("Unanswered: "+ aempty);
-            $("#timetotal").text("Total time: "+ totaltime +"seconds");
+            $("#timetotal").text("Total time: "+ totaltime +" seconds");
         },
 
         //determines right, wrong, or timeout and displays some info on splash screen
@@ -167,9 +164,7 @@ $(document).ready(function() {
             totaltime+=(30-questtime);
             document.getElementById("splash").style.display = 'inline';
             document.getElementById("quizbox").style.display = 'none';
-            console.log(quiz[chosenq[currentq]][0][1]);
-            if(x==currentcorrect)
-            {
+            if(x==currentcorrect){
                 $("#lastq").text("Correct");
                 $("#pics").html("<img src='"+quiz[chosenq[currentq]][0][1]+"' width='400px'>");
                 aright++;
@@ -196,7 +191,6 @@ $(document).ready(function() {
         //determines if it's at the end of quiz, and displays next question if not
         nextquest: function(){
             questtime=30;
-
             if(currentq==(quiz.length-1)){
                 game.final();
             }
@@ -234,18 +228,15 @@ $(document).ready(function() {
         }
     }
 
-
     //game method calls and click handlers
     $("#Ans1").on("click", function() {
         game.rightwrong(0);
-
     });
     $("#Ans2").on("click", function() {
         game.rightwrong(1);
     });
     $("#Ans3").on("click", function() {
         game.rightwrong(2);
-
     });
     $("#Ans4").on("click", function() {
         game.rightwrong(3);
@@ -255,6 +246,12 @@ $(document).ready(function() {
         document.getElementById("splash").style.display = 'none';
         document.getElementById("startbtn").style.display = 'none';
         document.getElementById("quizbox").style.display = 'inline';
+        
+        document.getElementById("hide1").style.display = 'block';
+        document.getElementById("hide2").style.display = 'block';
+        document.getElementById("hide3").style.display = 'block';
+        document.getElementById("hide4").style.display = 'block';
+        document.getElementById("hide5").style.display = 'block';
         game.qchoice();
         game.achoice();
         game.qdisplay();
