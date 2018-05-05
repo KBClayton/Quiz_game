@@ -1,0 +1,33 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background: url(../images/back.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+
+#splash {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:100%;
+    background: url(../images/back2.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.qdiv{
+    width: 40rem;
+}
+h1{
+    background-color: white;
+    border: solid;
+    border-color: teal;
+    border-width: 5px;
+}
+h2{
+    background-color: white;
+    border: solid;
+    border-color: teal;
+    border-width: 5px;
+}
